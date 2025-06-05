@@ -1,8 +1,10 @@
 CONFIG = {
-    "message": "swaga", #"WebMindStudio!",
-    "animation": "swaga", # scroll, swaga
-    "color": "#3399ff",     # Fallback/default
+    "message": "WebMindStuduio",
+    "animation": "swaga", # swaga/obo/scroll
+    "color": "#ffaa00",
     "delay": 0.02,
     "loop": True,
-    "rgb_step": 1,
+    "breath_cycles": 3,
+    "breath_steps": 80,  # (чем больше — плавнее дыхание)
+    "vertical_align": "center"  # "top", "center", or "bottom"
 }
