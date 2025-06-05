@@ -1,17 +1,36 @@
 # main.py
+import re
+import math
 import time
+import random
 import signal
 import shutil
-import itertools
+import argparse
 import pyfiglet
-import re
-import random
-import math
+import itertools
 
-from rich.console import Console
-from rich.live import Live
 from rich.text import Text
-from config import CONFIG
+from rich.live import Live
+from rich.console import Console
+from config import CONFIG as DEFAULT_CONFIG
+
+def apply_cli_overrides():
+    parser = argparse.ArgumentParser(description="ASCII banner animation")
+
+    parser.add_argument("--message", help="Text to display")
+    parser.add_argument("--animation", choices=["obo", "swaga", "scroll"], help="Animation type")
+    parser.add_argument("--color", help="HEX color (e.g., #ffaa00)")
+    parser.add_argument("--loop", dest="loop", action="store_true", help="Enable looping")
+    parser.add_argument("--noloop", dest="loop", action="store_false", help="Disable looping")
+    parser.set_defaults(loop=None)
+    parser.add_argument("--vertical-align", choices=["top", "center", "bottom"], help="Vertical alignment")
+
+    args = parser.parse_args()
+
+    cli_config = {k: v for k, v in vars(args).items() if v is not None}
+    merged_config = DEFAULT_CONFIG.copy()
+    merged_config.update(cli_config)
+    return merged_config
 
 console = Console()
 running = True
@@ -132,7 +151,10 @@ def obo_animation():
             break
 
 def main():
-    anim = CONFIG["animation"]
+    global CONFIG
+    CONFIG = apply_cli_overrides()
+
+    anim = CONFIG.get("animation", "obo")
     if anim == "obo":
         obo_animation()
     elif anim == "swaga":
@@ -141,6 +163,7 @@ def main():
         scroll_banner()
     else:
         console.print(f"[red]Unknown animation type: {anim}[/red]")
+
 
 def scroll_banner():
     banner_lines = generate_banner_lines(CONFIG["message"])
