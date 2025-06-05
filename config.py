@@ -1,10 +1,8 @@
 CONFIG = {
-    "message": "WebMindStudio!",
-    "animation": "scroll",     # Only scroll supported in this version
-    "color": "magenta",
-    "delay": 0.03,
-    "width": None,
-    "loop": True
+    "message": "swaga", #"WebMindStudio!",
+    "animation": "swaga", # scroll, swaga
+    "color": "#3399ff",     # Fallback/default
+    "delay": 0.02,
+    "loop": True,
+    "rgb_step": 1,
 }
-
-
