@@ -20,4 +20,4 @@ python3 main.py
 <img src="./assets/obo.GIF"/>
 
 <h2>Scroll</h2>
-<img src="./assets/scroll.GIF"/>
+<img src="./assets/slide.GIF"/>
