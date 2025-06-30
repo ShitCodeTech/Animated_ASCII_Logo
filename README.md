@@ -16,7 +16,7 @@ python3 main.py
 <h2>Swaga</h2>
 <img src="./assets/swaga.GIF"/>
 
-<h2>One By One -obo</h2>
+<h2>One By One - obo</h2>
 <img src="./assets/obo.GIF"/>
 
 <h2>Scroll</h2>
