@@ -9,6 +9,7 @@ pip install -r requirements.txt
 python3 main.py
 ```
 
+Inline config mode described with `--help` argument
 
 
 <h1 align=center>Presets</h1>
@@ -21,3 +22,4 @@ python3 main.py
 
 <h2>Scroll</h2>
 <img src="./assets/slide.GIF"/>
+
