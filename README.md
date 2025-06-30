@@ -14,10 +14,10 @@ python3 main.py
 <h1 align=center>Presets</h1>
 
 <h2>Swaga</h2>
-<img src="./assets/swaga.gif" width="50%" height="50%"/>
+<img src="./assets/swaga.GIF"/>
 
 <h2>One By One -obo</h2>
-<img src="./assets/obo.gif"/>
+<img src="./assets/obo.GIF"/>
 
 <h2>Scroll</h2>
-<img src="./assets/obo.gif"/>
+<img src="./assets/obo.GIF"/>
